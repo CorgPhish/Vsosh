@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CorgPhish Analytics</title>
+    <link rel="stylesheet" href="../css/analytics.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="analytics-container">
+        <!-- Header section -->
+        <header class="analytics-header">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="../images/logo.png" alt="CorgPhish Logo">
+                    <h1>CorgPhish Analytics</h1>
+                </div>
+                <div class="header-actions">
+                    <button id="export-btn" class="export-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Экспорт данных
+                    </button>
+                </div>
+            </div>
+            <nav class="analytics-nav">
+                <ul>
+                    <li><a href="#stats-overview" class="active">Обзор</a></li>
+                    <li><a href="#deep-scan-section">Глубокое сканирование</a></li>
+                    <li><a href="#domain-stats-section">Статистика доменов</a></li>
+                    <li><a href="settings.html">Настройки</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Stats overview section -->
+        <section id="stats-overview" class="stats-overview">
+            <h2>Общая статистика</h2>
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Проверено сайтов</span>
+                        <span id="total-sites-checked" class="stat-value">0</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon danger">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                            <line x1="12" y1="9" x2="12" y2="13"></line>
+                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Обнаружено фишинга</span>
+                        <span id="phishing-detected" class="stat-value">0</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon warning">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Глубокое сканирование</span>
+                        <span id="deep-scan-detections" class="stat-value">0</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon success">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Точность</span>
+                        <span id="detection-accuracy" class="stat-value">0%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts section -->
+        <section class="charts-section">
+            <div class="chart-container">
+                <h3>Распределение признаков фишинга</h3>
+                <div class="chart-wrapper">
+                    <canvas id="feature-distribution-chart"></canvas>
+                </div>
+            </div>
+            <div class="chart-container">
+                <h3>Динамика обнаружений</h3>
+                <div class="chart-wrapper">
+                    <canvas id="detection-trends-chart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deep scan section -->
+        <section id="deep-scan-section" class="deep-scan-section">
+            <h2>Результаты глубокого сканирования</h2>
+            
+            <div class="metrics-container">
+                <div id="obfuscation-metric" class="metric-card">
+                    <div class="metric-header">
+                        <h4>Обфускация кода</h4>
+                        <span class="metric-value">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%"></div>
+                    </div>
+                    <div class="metric-description">
+                        Процент обнаружений с обфусцированным JavaScript
+                    </div>
+                </div>
+                
+                <div id="hidden-elements-metric" class="metric-card">
+                    <div class="metric-header">
+                        <h4>Скрытые элементы</h4>
+                        <span class="metric-value">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%"></div>
+                    </div>
+                    <div class="metric-description">
+                        Процент обнаружений со скрытыми элементами формы
+                    </div>
+                </div>
+            </div>
+            
+            <div class="recent-detections">
+                <h3>Недавние обнаружения</h3>
+                <div id="detections-list" class="detections-list">
+                    <div class="placeholder">Загрузка данных...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Domain stats section -->
+        <section id="domain-stats-section" class="domain-stats-section">
+            <h2>Статистика по доменам</h2>
+            <div class="table-container">
+                <table class="domain-stats-table">
+                    <thead>
+                        <tr>
+                            <th>Домен</th>
+                            <th>Обнаружения</th>
+                            <th>Уровень риска</th>
+                            <th>Последнее обнаружение</th>
+                        </tr>
+                    </thead>
+                    <tbody id="domain-stats-body">
+                        <tr>
+                            <td colspan="4" class="placeholder">Загрузка данных...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="analytics-footer">
+            <div class="footer-content">
+                <p>&copy; 2023 CorgPhish. Все права защищены.</p>
+                <div class="footer-links">
+                    <a href="settings.html">Настройки</a>
+                    <a href="../../../docs/USER_GUIDE_RU.md" target="_blank">Руководство</a>
+                    <a href="https://github.com/physcorgi/CorgPhish" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../js/analytics.js"></script>
+</body>
+</html> 

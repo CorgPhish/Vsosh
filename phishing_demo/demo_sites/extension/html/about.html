@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О CorgPhish</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px 30px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        
+        header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        .logo {
+            width: 64px;
+            height: 64px;
+            margin-right: 20px;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin: 0;
+            color: #1a73e8;
+        }
+        
+        h2 {
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #1a73e8;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        p {
+            margin: 15px 0;
+        }
+        
+        .version-info {
+            font-size: 14px;
+            color: #5f6368;
+        }
+        
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .feature-list li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #1a73e8;
+            font-weight: bold;
+        }
+        
+        .team-section {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .team-member {
+            width: 48%;
+            margin-bottom: 20px;
+        }
+        
+        .contact-links {
+            margin-top: 20px;
+        }
+        
+        .contact-links a {
+            display: inline-block;
+            margin-right: 15px;
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #5f6368;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="../icons/icon64.png" alt="CorgPhish Logo" class="logo">
+            <div>
+                <h1>CorgPhish</h1>
+                <p class="version-info">Версия 1.0.0</p>
+            </div>
+        </header>
+        
+        <section>
+            <p>
+                <strong>CorgPhish</strong> - это расширение для браузера, предназначенное для защиты от фишинговых сайтов 
+                с особым фокусом на русскоязычный сегмент интернета. 
+            </p>
+            
+            <p>
+                В отличие от стандартных решений, CorgPhish использует продвинутые алгоритмы машинного обучения, 
+                которые работают полностью на вашем устройстве, не передавая данные на внешние серверы.
+            </p>
+        </section>
+        
+        <h2>Основные возможности</h2>
+        <ul class="feature-list">
+            <li><strong>Локальная работа</strong> - Все вычисления производятся прямо в браузере, без отправки URL на сервер</li>
+            <li><strong>Интеграция с Google Safe Browsing</strong> - Дополнительная проверка через базу данных Google</li>
+            <li><strong>Машинное обучение</strong> - Использование XGBoost модели для определения фишинговых сайтов</li>
+            <li><strong>Поддержка кириллицы</strong> - Специальные алгоритмы для обнаружения фишинга на русскоязычных сайтах</li>
+            <li><strong>Анализ доменов</strong> - Определение сходства с популярными сервисами для выявления подделок</li>
+            <li><strong>Подробные предупреждения</strong> - Информативные уведомления с объяснением причин блокировки</li>
+        </ul>
+        
+        <h2>Как это работает?</h2>
+        <p>
+            CorgPhish анализирует URL-адреса и содержимое страниц, которые вы посещаете, используя сочетание следующих технологий:
+        </p>
+        <ol>
+            <li>Проверка домена через списки известных фишинговых и безопасных сайтов</li>
+            <li>Анализ URL с помощью модели машинного обучения XGBoost</li>
+            <li>Проверка сходства доменов с популярными сервисами</li>
+            <li>Интеграция с Google Safe Browsing API для дополнительной верификации</li>
+        </ol>
+        <p>
+            Благодаря использованию локальной модели машинного обучения, расширение работает быстро и не передает
+            информацию о посещаемых вами сайтах на сторонние серверы, обеспечивая максимальную приватность.
+        </p>
+        
+        <h2>Настройки</h2>
+        <p>
+            CorgPhish предлагает гибкие настройки, позволяющие:
+        </p>
+        <ul>
+            <li>Включать/выключать различные методы проверки</li>
+            <li>Настраивать интеграцию с Google Safe Browsing API</li>
+            <li>Управлять уведомлениями и предупреждениями</li>
+            <li>Создавать собственный белый список доверенных сайтов</li>
+        </ul>
+        <p>
+            Для доступа к настройкам нажмите правой кнопкой мыши на иконку расширения и выберите "Настройки".
+        </p>
+        
+        <h2>О команде</h2>
+        <p>
+            CorgPhish был разработан командой специалистов по кибербезопасности и машинному обучению с целью 
+            создания надежного и приватного инструмента для защиты от фишинга.
+        </p>
+        
+        <div class="contact-links">
+            <a href="https://github.com/corgphish/corgphish" target="_blank">GitHub</a>
+            <a href="mailto:support@corgphish.com">Обратная связь</a>
+            <a href="https://corgphish.com/privacy" target="_blank">Политика конфиденциальности</a>
+        </div>
+        
+        <footer>
+            <p>&copy; 2023 CorgPhish Team. Все права защищены.</p>
+        </footer>
+    </div>
+</body>
+</html> 

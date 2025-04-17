@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CorgPhish - Защита от фишинга</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="../css/plugin_ui.css">
+</head>
+<body>
+  <header id="plugin_name">
+    <h1>
+      <img src="../icons/icon32.png" alt="CorgPhish Logo" class="logo" />
+      CorgPhish
+    </h1>
+    <button id="theme-toggle" title="Переключить тему">
+      <i class="fas fa-moon"></i>
+    </button>
+  </header>
+
+  <div class="result-container">
+    <div class="rounded-circle" id="status-circle">
+      <h1 id="site_score">100%</h1>
+    </div>
+    <h2 id="site_msg">Это официальный сайт! Проверено</h2>
+  </div>
+
+  <div class="features-container">
+    <h3>Проверенные факторы:</h3>
+    <ul id="features">
+      <li><i class="fas fa-check-circle"></i>Безопасное соединение</li>
+      <li><i class="fas fa-check-circle"></i>Надежный домен</li>
+      <li><i class="fas fa-check-circle"></i>Проверенный сертификат</li>
+      <li><i class="fas fa-check-circle"></i>Безопасная форма входа</li>
+      <li><i class="fas fa-check-circle"></i>Официальный сайт</li>
+    </ul>
+  </div>
+
+  <!-- Создаем пустое пространство для навигации -->
+  <div class="navigation-spacer"></div>
+
+  <div class="navigation">
+    <div class="nav-item active" id="nav-home">
+      <i class="fas fa-home"></i>
+      <span>Главная</span>
+    </div>
+    <div class="nav-item" id="nav-history">
+      <i class="fas fa-history"></i>
+      <span>История</span>
+    </div>
+    <div class="nav-item" id="nav-settings">
+      <i class="fas fa-cog"></i>
+      <span>Настройки</span>
+    </div>
+    <div class="nav-item" id="nav-about">
+      <i class="fas fa-info-circle"></i>
+      <span>О нас</span>
+    </div>
+  </div>
+
+  <script src="../js/popup.js"></script>
+</body>
+</html> 

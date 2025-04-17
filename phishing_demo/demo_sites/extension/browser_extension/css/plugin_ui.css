@@ -1,0 +1,725 @@
+:root {
+  /* Светлая тема */
+  --primary-color-light: #4e54c8;
+  --secondary-color-light: #2c3e50;
+  --success-color-light: #10b981;
+  --warning-color-light: #f59e0b;
+  --danger-color-light: #ef4444;
+  --neutral-bg-light: #f8fafc;
+  --text-color-light: #2c3e50;
+  --card-bg-light: #ffffff;
+  
+  /* Темная тема */
+  --primary-color-dark: #4e54c8;
+  --secondary-color-dark: #1a202c;
+  --success-color-dark: #0d9488;
+  --warning-color-dark: #d97706;
+  --danger-color-dark: #dc2626;
+  --neutral-bg-dark: #0f172a;
+  --text-color-dark: #e2e8f0;
+  --card-bg-dark: #1e293b;
+  
+  /* Общие значения */
+  --border-radius: 16px;
+  --font-main: 'Roboto', 'Segoe UI', sans-serif;
+  --font-heading: 'Montserrat', 'Segoe UI', sans-serif;
+  --shadow-light: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-dark: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.18);
+  
+  /* Значения по умолчанию (светлая тема) */
+  --primary-color: var(--primary-color-light);
+  --secondary-color: var(--secondary-color-light);
+  --success-color: var(--success-color-light);
+  --warning-color: var(--warning-color-light);
+  --danger-color: var(--danger-color-light);
+  --neutral-bg: var(--neutral-bg-light);
+  --text-color: var(--text-color-light);
+  --card-bg: var(--card-bg-light);
+  --shadow: var(--shadow-light);
+}
+
+/* Темная тема */
+body.dark-theme {
+  --primary-color: var(--primary-color-dark);
+  --secondary-color: var(--secondary-color-dark);
+  --success-color: var(--success-color-dark);
+  --warning-color: var(--warning-color-dark);
+  --danger-color: var(--danger-color-dark);
+  --neutral-bg: var(--neutral-bg-dark);
+  --text-color: var(--text-color-dark);
+  --card-bg: var(--card-bg-dark);
+  --shadow: var(--shadow-dark);
+}
+
+html {
+  height: 500px;
+  width: 350px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: var(--neutral-bg);
+  height: 500px;
+  width: 350px;
+  font-family: var(--font-main);
+  color: var(--text-color);
+  overflow-x: hidden;
+  transition: all 0.3s ease;
+  padding-bottom: 60px;
+}
+
+#plugin_name {
+  width: 100%;
+  margin: 0;
+  background: linear-gradient(135deg, var(--primary-color), #8a56fd);
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  padding: 15px 0;
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+#plugin_name .logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+  vertical-align: middle;
+  color: white;
+  font-size: 28px;
+}
+
+#theme-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: var(--font-main);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  color: white;
+  font-size: 22px;
+  padding: 10px;
+  text-align: center;
+  margin: 0;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+h3 {
+  font-family: var(--font-main);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+  opacity: 0.8;
+  margin: 15px 0 10px;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  margin-top: -20px;
+}
+
+.features-container {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  margin: 10px 15px;
+  padding: 15px;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.rounded-circle {
+  background: var(--success-color);
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  position: relative;
+  transition: all 0.3s ease;
+  border: 6px solid var(--card-bg);
+  margin-top: 10px;
+}
+
+#site_score {
+  font-family: var(--font-heading);
+  color: white;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  font-size: 36px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#site_msg {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-family: var(--font-main);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-color);
+  padding: 0 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+li {
+  background-color: rgba(78, 84, 200, 0.1);
+  color: var(--primary-color);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  display: inline-block;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark-theme .stats-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stats-row:last-child {
+  border-bottom: none;
+}
+
+.stats-label {
+  color: var(--text-color);
+  opacity: 0.7;
+  font-size: 14px;
+}
+
+.stats-value {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 14px;
+}
+
+.rounded-circle.danger {
+  background: var(--danger-color);
+}
+
+.rounded-circle.warning {
+  background: var(--warning-color);
+}
+
+.navigation {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--card-bg);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 100;
+}
+
+body.dark-theme .navigation {
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-color);
+  opacity: 0.6;
+}
+
+.nav-item.active {
+  color: var(--primary-color);
+  opacity: 1;
+}
+
+.nav-item i {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.nav-item span {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.features-container {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Адаптации для скроллбара */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Добавляем стили для формы API ключа */
+.api-key-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.api-key-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.api-key-input button {
+  padding: 8px 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.api-key-input button:hover {
+  opacity: 0.9;
+}
+
+.btn-info {
+  background-color: #17a2b8 !important;
+}
+
+.btn-info:hover {
+  background-color: #138496 !important;
+}
+
+.setting-group {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .setting-group {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.setting-group:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.setting-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.setting-group .form-control {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  margin-bottom: 8px;
+}
+
+.dark-theme .setting-group .form-control {
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.setting-group small {
+  display: block;
+  color: var(--text-color);
+  opacity: 0.7;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.alert {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.alert-warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.alert-info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+.mt-3 {
+  margin-top: 16px;
+}
+
+/* Добавляем стили для темной темы */
+body.dark-theme .api-key-input input {
+  background-color: #333;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+body.dark-theme .alert-success {
+  background-color: #0d3622;
+  color: #8fd19e;
+  border: 1px solid #0f5132;
+}
+
+body.dark-theme .alert-danger {
+  background-color: #3d1c22;
+  color: #ea868f;
+  border: 1px solid #58151c;
+}
+
+body.dark-theme .alert-warning {
+  background-color: #332701;
+  color: #ffda6a;
+  border: 1px solid #664d03;
+}
+
+body.dark-theme .alert-info {
+  background-color: #051e24;
+  color: #9eeaf9;
+  border: 1px solid #087990;
+}
+
+/* Стили для бинарного результата */
+.binary-result {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.binary-result.safe {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.binary-result.phishing {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+/* Исправление для избежания наложения страниц */
+.settings-container {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+  max-height: 280px;
+  margin-top: 5px;
+}
+
+/* Обеспечение того, чтобы дочерние элементы не накладывались */
+#detail_features {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+/* Улучшенные стили для настроек */
+.setting-group {
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .setting-group {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.setting-group:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.setting-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.setting-group .form-control {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  margin-bottom: 8px;
+}
+
+.dark-theme .setting-group .form-control {
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.setting-group small {
+  display: block;
+  color: var(--text-color);
+  opacity: 0.7;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Обеспечение правильной работы z-index слоев */
+.nav-item {
+  position: relative;
+  z-index: 10;
+}
+
+/* Добавляем отступы для навигации */
+.navigation {
+  margin-top: 20px;
+}
+
+/* Улучшенные стили для формы настроек */
+.settings-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  text-align: center;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 8px;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-secondary i {
+  font-size: 14px;
+}
+
+.credits {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-color);
+  opacity: 0.7;
+  margin-top: 15px;
+}
+
+/* Улучшения для истории защиты */
+.history-container {
+  max-height: 280px;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+.history-item {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--primary-color);
+  transition: all 0.2s ease;
+}
+
+.history-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.history-item.phishing {
+  border-left-color: var(--danger-color);
+}
+
+.history-item.safe {
+  border-left-color: var(--success-color);
+}
+
+.history-url {
+  font-weight: 500;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.history-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.history-status {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.history-status.safe {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: var(--success-color);
+}
+
+.history-status.phishing {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: var(--danger-color);
+}
+
+.empty-history {
+  text-align: center;
+  padding: 20px 10px;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.empty-history p {
+  margin: 5px 0;
+}
+
+.loading-message {
+  text-align: center;
+  padding: 15px;
+  color: var(--text-color);
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* Фиксим наложение для истории */
+#history-list {
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+/* Фиксим стили для navigation, чтобы элементы не накладывались */
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+}

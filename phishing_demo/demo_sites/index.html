@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CorgPhish Демонстрационные Сайты</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .phishing-warning {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 10px 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            border-left: 4px solid #f5c6cb;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        li a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        li a:hover {
+            text-decoration: underline;
+        }
+        .status {
+            font-size: 0.8em;
+            padding: 3px 8px;
+            border-radius: 10px;
+        }
+        .ready {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .description {
+            margin-bottom: 30px;
+        }
+        .extension-info {
+            background-color: #e7f5ff;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .extension-instructions {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+        .instruction-step {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .instruction-step:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #007bff;
+        }
+        .chrome-install {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f9ff;
+            border-radius: 4px;
+        }
+        .chrome-install ol {
+            margin-left: 20px;
+        }
+        .demo-url {
+            font-family: monospace;
+            background-color: #f5f5f5;
+            padding: 3px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>CorgPhish Демонстрационные Сайты</h1>
+    
+    <div class="phishing-warning">
+        <strong>Внимание:</strong> Следующие ссылки ведут на симулированные фишинговые сайты, созданные исключительно в образовательных и тестовых целях. 
+        Эти сайты предназначены для демонстрации того, как CorgPhish обнаруживает различные типы фишинговых попыток.
+    </div>
+    
+    <div class="extension-info">
+        <strong>Расширение CorgPhish:</strong> Этот демо-сервер интегрирован с браузерным расширением CorgPhish.
+        <div class="extension-instructions">
+            <p><strong>Чтобы использовать расширение с этими демо-сайтами:</strong></p>
+            <div class="instruction-step">Убедитесь, что расширение CorgPhish установлено в вашем браузере</div>
+            <div class="instruction-step">Если оно не установлено, установите его через Chrome Web Store или из директории расширения</div>
+            <div class="instruction-step">После установки расширение должно автоматически обнаруживать фишинговые сайты</div>
+        </div>
+        
+        <div class="chrome-install">
+            <p><strong>Установка из директории расширения:</strong></p>
+            <ol>
+                <li>Откройте <span class="demo-url">chrome://extensions/</span> в браузере Chrome</li>
+                <li>Включите «Режим разработчика» в правом верхнем углу</li>
+                <li>Нажмите «Загрузить распакованное расширение»</li>
+                <li>Выберите папку <span class="demo-url">/Users/daniilgldyshev/Desktop/CorgPhish/dist/browser_extension</span></li>
+            </ol>
+        </div>
+    </div>
+    
+    <div class="description">
+        <p>Эти демо-сайты демонстрируют различные типы фишинговых атак, которые CorgPhish предназначен обнаруживать. 
+        Каждый сайт был создан для имитации распространенных фишинговых сценариев, оставаясь при этом полностью безопасным для тестирования.</p>
+        <p>Выберите сайт ниже для изучения:</p>
+    </div>
+    
+    <ul>
+        <li>
+            <span>Bank Phish</span>
+            <a href="/bank-phish/index.html">Посетить демо-сайт</a>
+        </li>
+        <li>
+            <span>Crypto Phish</span>
+            <a href="/crypto-phish/index.html">Посетить демо-сайт</a>
+        </li>
+        <li>
+            <span>Email Login</span>
+            <a href="/email-login/index.html">Посетить демо-сайт</a>
+        </li>
+    </ul>
+</body>
+</html>

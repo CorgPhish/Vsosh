@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Фон щита -->
+  <path d="M16 2L4 7V15C4 21.6274 9.37258 28 16 28C22.6274 28 28 21.6274 28 15V7L16 2Z" fill="#1a237e"/>
+  
+  <!-- Внутренняя часть щита -->
+  <path d="M16 4L6 8.2V15C6 20.4 10.6 25 16 25C21.4 25 26 20.4 26 15V8.2L16 4Z" fill="#ffffff"/>
+  
+  <!-- Галочка -->
+  <path d="M12 16L14.5 18.5L20.5 12.5" stroke="#1a237e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg> 

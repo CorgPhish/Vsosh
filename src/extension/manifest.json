@@ -1,0 +1,48 @@
+{
+  "name": "CorgPhish",
+  "version": "1.0.1",
+  "description": "Защита от фишинговых сайтов и мошенничества",
+  "manifest_version": 3,
+  "author": "CorgPhish Team",
+  "homepage_url": "https://github.com/physcorgi/CorgPhish",
+  "action": {
+    "default_popup": "html/popup.html",
+    "default_title": "CorgPhish - Защита от фишинга"
+  },
+  "background": {
+    "service_worker": "js/bg-loader.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["js/content.js"],
+      "css": ["css/content.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "html/*",
+        "css/*",
+        "js/*",
+        "icons/*"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "notifications",
+    "alarms",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "<all_urls>"
+  ],
+  "incognito": "split",
+  "update_url": "https://physcorgi.github.io/CorgPhish/updates.xml"
+} 

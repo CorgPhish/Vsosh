@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚠️ Внимание: Обнаружен потенциально опасный сайт</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0e1149;
+            --secondary-color: #2c3e50;
+            --danger-color: #e53935;
+            --warning-color: #ff9800;
+            --success-color: #10b981;
+            --neutral-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --text-color: #2c3e50;
+            --font-main: 'Roboto', 'Segoe UI', sans-serif;
+            --font-heading: 'Montserrat', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 0;
+            background-color: var(--neutral-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 8px;
+            width: 100%;
+            background: linear-gradient(90deg, var(--danger-color), #ff5252);
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .warning-icon {
+            font-size: 42px;
+            margin-right: 20px;
+            color: var(--danger-color);
+        }
+        
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--danger-color);
+            margin: 0;
+        }
+        
+        .subtitle {
+            font-family: var(--font-main);
+            font-size: 16px;
+            font-weight: 400;
+            color: #777;
+            margin-top: 5px;
+        }
+        
+        .url-display {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            font-family: monospace;
+            word-break: break-all;
+            margin: 25px 0;
+            font-size: 16px;
+            border-left: 4px solid var(--danger-color);
+        }
+        
+        .reasons {
+            background-color: #fff5f5;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+        }
+        
+        .reasons h2 {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--danger-color);
+        }
+        
+        .reasons ul {
+            padding-left: 20px;
+        }
+        
+        .reasons li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        .reasons li::before {
+            content: '\f06a';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: var(--danger-color);
+            position: absolute;
+            left: -22px;
+        }
+        
+        .risk-score {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+            font-weight: bold;
+        }
+        
+        .risk-score-label {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            margin-right: 15px;
+        }
+        
+        .risk-score span {
+            margin-left: 10px;
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .high-risk {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+        
+        .medium-risk {
+            background-color: #fff8e1;
+            color: #ff8f00;
+        }
+        
+        .low-risk {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 35px;
+        }
+        
+        .btn {
+            padding: 14px 25px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 16px;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:active {
+            transform: translateY(-1px);
+        }
+        
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+        
+        .btn-danger {
+            background-color: var(--danger-color);
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background-color: #d32f2f;
+        }
+        
+        .btn-secondary {
+            background-color: #f5f5f5;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e0e0e0;
+        }
+        
+        .details-container {
+            display: none;
+            margin-top: 30px;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border-left: 4px solid #4285f4;
+        }
+        
+        .information {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid #eee;
+        }
+        
+        .information h2 {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .information p {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer img {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+        
+        .demo-indicator {
+            display: none;
+            background: linear-gradient(90deg, #ffa000, #ff6f00);
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            margin-bottom: 25px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: var(--shadow);
+        }
+        
+        .demo-indicator i {
+            margin-right: 8px;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+            
+            .actions {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="demo-indicator" id="demoMode">
+            <i class="fas fa-vial"></i> Демонстрационный режим
+        </div>
+        
+        <div class="header">
+            <i class="fas fa-exclamation-triangle warning-icon"></i>
+            <div>
+                <h1>Обнаружен подозрительный сайт</h1>
+                <p class="subtitle">CorgPhish определил этот сайт как потенциально опасный</p>
+            </div>
+        </div>
+        
+        <p>Вы пытаетесь получить доступ к сайту, который был определен как потенциально опасный. Рекомендуется покинуть эту страницу.</p>
+        
+        <div class="url-display" id="url-display">
+            https://suspicious-site.example.com
+        </div>
+        
+        <div class="risk-score">
+            <span class="risk-score-label">Уровень риска:</span>
+            <span class="high-risk" id="riskScore">Высокий</span>
+        </div>
+        
+        <div class="reasons">
+            <h2>Причины подозрений:</h2>
+            <ul id="reasons-list">
+                <li>Сайт пытается имитировать известный ресурс</li>
+                <li>Подозрительная структура URL</li>
+                <li>Отсутствует SSL-сертификат</li>
+                <li>Низкая репутация домена</li>
+            </ul>
+        </div>
+        
+        <div class="actions">
+            <button class="btn btn-danger" id="leaveBtn"><i class="fas fa-arrow-left"></i> Вернуться назад</button>
+            <button class="btn btn-secondary" id="detailsBtn"><i class="fas fa-info-circle"></i> Подробности</button>
+            <button class="btn btn-primary" id="ignoreBtn"><i class="fas fa-exclamation-triangle"></i> Игнорировать риск</button>
+        </div>
+        
+        <div class="details-container" id="details">
+            <h2>Технические детали</h2>
+            <p id="technical-details">Загрузка технических деталей...</p>
+        </div>
+        
+        <div class="information">
+            <h2>Что это значит?</h2>
+            <p>Фишинговые сайты имитируют легитимные веб-ресурсы, чтобы украсть вашу личную информацию, такую как логины, пароли, данные банковских карт и другие конфиденциальные данные.</p>
+            <p>CorgPhish предупреждает вас о подозрительных сайтах на основе анализа множества факторов, включая машинное обучение и проверку по базам данных известных фишинговых сайтов.</p>
+        </div>
+        
+        <div class="footer">
+            <img src="../icons/icon48.png" alt="CorgPhish Logo">
+            <p>Защищено CorgPhish v1.1.0 | © 2023-2024</p>
+        </div>
+    </div>
+    
+    <script src="../js/warning.js"></script>
+</body>
+</html> 

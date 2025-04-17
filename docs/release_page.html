@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CorgPhish v1.2.0 - Интеллектуальная система защиты от фишинга</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .version {
+            background-color: #0078d7;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        h1, h2, h3 {
+            color: #0078d7;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .feature {
+            flex: 1 1 250px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .feature h3 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        .feature-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .download-btn {
+            display: inline-block;
+            background-color: #0078d7;
+            color: white;
+            padding: 12px 24px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+        .download-btn:hover {
+            background-color: #005fa3;
+        }
+        .metrics {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .metric {
+            text-align: center;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            flex: 1 1 120px;
+        }
+        .metric-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0078d7;
+        }
+        .installation {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 3px 5px;
+            border-radius: 3px;
+            font-family: Consolas, Monaco, 'Andale Mono', monospace;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="images/corgphish_logo.png" alt="CorgPhish Logo" class="logo">
+        <h1>CorgPhish <span class="version">v1.2.0</span></h1>
+        <p>Интеллектуальная система защиты от фишинга с использованием машинного обучения</p>
+        <a href="https://github.com/physcorgi/CorgPhish/releases/download/v1.2.0/CorgPhish-v1.2.0.zip" class="download-btn">Скачать CorgPhish v1.2.0</a>
+    </div>
+
+    <div class="metrics">
+        <div class="metric">
+            <div class="metric-value">97.2%</div>
+            <div>Accuracy</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value">96.5%</div>
+            <div>Precision</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value">95.8%</div>
+            <div>Recall</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value">96.1%</div>
+            <div>F1-Score</div>
+        </div>
+    </div>
+
+    <h2>Что нового в версии 1.2.0</h2>
+    <div class="features">
+        <div class="feature">
+            <h3><span class="feature-icon">🏗️</span> Улучшенная структура</h3>
+            <p>Полностью переработана структура проекта для более удобной разработки и поддержки.</p>
+        </div>
+        <div class="feature">
+            <h3><span class="feature-icon">🎨</span> Новый дизайн</h3>
+            <p>Обновлен логотип и визуальный стиль интерфейса для улучшения пользовательского опыта.</p>
+        </div>
+        <div class="feature">
+            <h3><span class="feature-icon">🔒</span> Интеграция с Google</h3>
+            <p>Добавлена возможность дополнительной проверки через Google Safe Browsing API.</p>
+        </div>
+        <div class="feature">
+            <h3><span class="feature-icon">📚</span> Расширенная документация</h3>
+            <p>Добавлена подробная документация по всем аспектам проекта для разработчиков.</p>
+        </div>
+        <div class="feature">
+            <h3><span class="feature-icon">⚡</span> Выше производительность</h3>
+            <p>Оптимизировано время анализа страниц на 15% и уменьшен размер расширения на 22%.</p>
+        </div>
+        <div class="feature">
+            <h3><span class="feature-icon">🛠️</span> Больше инструментов</h3>
+            <p>Добавлены новые скрипты для сборки и обслуживания проекта.</p>
+        </div>
+    </div>
+
+    <div class="installation">
+        <h2>Установка</h2>
+        <h3>Вариант 1: Быстрая установка (рекомендуется)</h3>
+        <ol>
+            <li>Скачайте <a href="https://github.com/physcorgi/CorgPhish/releases/download/v1.2.0/CorgPhish-v1.2.0.zip">CorgPhish-v1.2.0.zip</a></li>
+            <li>Распакуйте архив в любую папку</li>
+            <li>Откройте Chrome или Firefox</li>
+            <li>
+                <p>Для Chrome:</p>
+                <ul>
+                    <li>Перейдите на страницу <code>chrome://extensions/</code></li>
+                    <li>Включите "Режим разработчика" (переключатель в правом верхнем углу)</li>
+                    <li>Нажмите "Загрузить распакованное расширение" и выберите распакованную папку</li>
+                </ul>
+            </li>
+            <li>
+                <p>Для Firefox:</p>
+                <ul>
+                    <li>Перейдите на страницу <code>about:debugging#/runtime/this-firefox</code></li>
+                    <li>Нажмите "Загрузить временное дополнение" и выберите файл <code>manifest.json</code> в распакованной папке</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>Вариант 2: Установка из исходного кода</h3>
+        <ol>
+            <li>Клонируйте репозиторий:
+                <pre><code>git clone https://github.com/physcorgi/CorgPhish.git
+cd CorgPhish</code></pre>
+            </li>
+            <li>Установите зависимости:
+                <pre><code>pip install -r requirements.txt</code></pre>
+            </li>
+            <li>Соберите проект:
+                <pre><code>python3 build.py</code></pre>
+            </li>
+            <li>Загрузите расширение в браузер из папки <code>dist/browser_extension</code> (см. инструкции выше)</li>
+        </ol>
+    </div>
+
+    <h2>Как это работает</h2>
+    <p>CorgPhish анализирует страницы в режиме реального времени, используя модель машинного обучения на основе XGBoost. Расширение извлекает более 50 признаков из URL и DOM-структуры страницы, вычисляет вероятность фишинга и предупреждает пользователя о потенциальных угрозах.</p>
+    <p style="text-align: center;">
+        <code>Загрузка страницы → Извлечение признаков → Анализ модели ML → Оценка риска → Уведомление пользователя</code>
+    </p>
+
+    <footer>
+        <p>CorgPhish &copy; 2025 - <a href="https://github.com/physcorgi/CorgPhish">GitHub</a> - Лицензия MIT</p>
+    </footer>
+</body>
+</html> 
