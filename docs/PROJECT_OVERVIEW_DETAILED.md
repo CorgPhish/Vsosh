@@ -1,7 +1,7 @@
 # CorgPhish: Полный обзор проекта
 
 <div align="center">
-  <img src="../src/extension/images/logo.png" alt="CorgPhish Logo" width="200"/>
+  <img src="images/logo.png" alt="CorgPhish Logo" width="200"/>
   <h3>Интеллектуальная защита от фишинга</h3>
 </div>
 

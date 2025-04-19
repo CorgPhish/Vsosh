@@ -1,42 +1,71 @@
-# CorgPhish Documentation
+# Документация проекта CorgPhish
 
-This directory contains all documentation and assets for the CorgPhish project.
+## Структура документации
 
-## Structure
+### Основная документация
+- [Полная документация проекта](PROJECT_DOCUMENTATION.md) - подробное описание всех аспектов проекта
+- [Детальный обзор проекта](PROJECT_OVERVIEW_DETAILED.md) - расширенный обзор с визуальными материалами
+- [Руководство по установке](INSTALLATION.md) - инструкции по установке для пользователей и разработчиков
+- [Структура проекта](PROJECT_STRUCTURE.md) - описание структуры файлов и директорий проекта
+- [Структура демонстрационной среды](PHISHING_DEMO_STRUCTURE.md) - описание демо-среды для тестирования
 
-- `en/` - English documentation
-  - `USER_GUIDE.md` - User guide in English
-  - `PROJECT_OVERVIEW.md` - Project overview in English
-  - Other English documentation files
+### Руководства
+- [Руководство пользователя](guides/user_guide.md) - инструкции для пользователей расширения
+- [Руководство разработчика](guides/developer_guide.md) - информация для разработчиков, вносящих вклад в проект
 
-- `website/` - Website files for GitHub Pages
-  - `index.html`, `about.html`, etc. - HTML pages
-  - `static/` - Static assets
-    - `css/` - CSS stylesheets
-    - `js/` - JavaScript files
-    - `img/` - Images and icons
-    - `images/` - Additional images
+### Другие документы
+- [Описание алгоритма ML](ML_ALGORITHM_RU.md) - подробная информация о модели машинного обучения
+- [Политика безопасности](SECURITY.md) - правила безопасности и сообщения об уязвимостях
+- [Внесение вклада в проект](CONTRIBUTING.md) - руководство для контрибьюторов
+- [Стиль кода](CODING_STYLE.md) - правила форматирования и стиля кода
+- [Заметки о релизах](RELEASE_NOTES.md) - информация о выпусках и изменениях
+- [Журнал изменений](CHANGELOG.md) - подробная история всех изменений
 
-- `project/` - Project management and development documentation
-  - `RESTRUCTURE.md` - Information about project restructuring
-  - `CLEANING.md` - Notes about cleanup procedures
-  - `github-pages/` - GitHub Pages configuration
+## Структура репозитория
 
-## Usage
+Основная структура проекта:
 
-The documentation in this directory is used both for the GitHub repository and for the project website. The website files are deployed to GitHub Pages.
+```
+CorgPhish/
+├── src/                  # Исходный код
+│   ├── extension/        # Код расширения для браузера
+│   ├── common/           # Общие компоненты
+│   └── frontend/         # Код для веб-интерфейса
+├── docs/                 # Документация
+├── tests/                # Тесты
+├── scripts/              # Вспомогательные скрипты
+├── phishing_demo/        # Демонстрационная среда
+├── dist/                 # Собранные файлы
+├── build/                # Временные файлы сборки
+├── build.py              # Скрипт сборки
+├── requirements.txt      # Зависимости Python
+├── README.md             # Основное описание
+└── LICENSE.md            # Лицензия
+```
 
-To update the documentation:
+## Соглашения по ведению документации
 
-1. Edit the relevant Markdown files in the `en/` directory
-2. To update the website, edit files in the `website/` directory
-3. Use relative links when referencing other documentation files
+1. **Язык**: Вся документация ведется на русском языке.
+2. **Форматирование**: Документация оформляется в формате Markdown.
+3. **Структура**: Каждый документ имеет содержание в начале для удобной навигации.
+4. **Именование файлов**: Файлы называются в верхнем регистре с подчеркиваниями (например, PROJECT_STRUCTURE.md).
+5. **Актуальность**: Документация обновляется при внесении значительных изменений в проект.
 
-## Contributing
+## Сборка документации
 
-When contributing to the documentation, please follow these guidelines:
+Для генерации HTML-версии документации:
 
-1. Use clear and concise language
-2. Include examples where appropriate
-3. Maintain consistent formatting
-4. Test all links before submitting changes 
+```bash
+# Установите mkdocs, если он еще не установлен
+pip install mkdocs
+
+# Соберите документацию
+cd docs
+mkdocs build
+```
+
+После этого HTML-версия документации будет доступна в директории `docs/site`.
+
+---
+
+© 2023 CorgPhish Team. Все права защищены. 

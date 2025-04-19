@@ -16,7 +16,7 @@
   
   <p>
     <a href="docs/INSTALLATION.md">Установка</a> •
-    <a href="docs/guides/USER_GUIDE.md">Документация</a> •
+    <a href="docs/guides/user_guide.md">Документация</a> •
     <a href="docs/CONTRIBUTING.md">Вклад в проект</a> •
     <a href="https://github.com/physcorgi/CorgPhish/issues">Сообщить об ошибке</a> •
     <a href="https://github.com/physcorgi/CorgPhish/discussions">Обсуждения</a>
@@ -70,12 +70,6 @@
 3. Модель машинного обучения вычисляет вероятность того, что сайт является фишинговым
 4. Пользователю отображается результат анализа и рекомендации
 
-[//]: # (<div align="center">)
-
-[//]: # (  <code>Загрузка страницы → Извлечение признаков → Анализ модели ML → Оценка риска → Уведомление пользователя</code>)
-
-[//]: # (</div>)
-
 ## 📸 Скриншоты
 
 <div align="center">
@@ -86,7 +80,7 @@
 </div>
 
 <details>
-<summary>📊 Примеры обнаружения</summary>
+
 
 ### Пример 1: Поддельный сайт банка
 ```
@@ -113,7 +107,7 @@ URL: https://faceb00k-security.example.org/login
 
 ### 🔧 Для пользователей:
 
-1. Перейдите на [страницу релиза 1.0.0](https://github.com/CorgPhish/Vsosh/releases/tag/1.0.0).
+1. Перейдите на [страницу релизов](https://github.com/physcorgi/CorgPhish/releases).
 2. Скачайте ZIP-архив с расширением.
 3. Распакуйте архив.
 4. Откройте в браузере страницу `chrome://extensions` (или `edge://extensions`, в зависимости от браузера).
@@ -139,6 +133,9 @@ python3 build.py
 
 # Загрузить расширение в браузере из папки dist/browser_extension
 ```
+
+📘 Подробнее: [Руководство для разработчиков](docs/guides/developer_guide.md)
+
 ## 🛠️ Технологии
 
 <div align="center">
@@ -147,10 +144,6 @@ python3 build.py
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
   <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow"/>
-
-[//]: # (  <img src="https://img.shields.io/badge/Chrome-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Chrome"/>)
-
-[//]: # (  <img src="https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=firefox-browser&logoColor=white" alt="Firefox"/>)
 </div>
 
 ## 📚 Документация
@@ -158,8 +151,8 @@ python3 build.py
 - [Полная документация проекта](docs/PROJECT_DOCUMENTATION.md)
 - [Руководство по установке](docs/INSTALLATION.md)
 - [Структура проекта](docs/PROJECT_STRUCTURE.md)
-- [Руководство для разработчиков](docs/guides/DEVELOPER_GUIDE.md)
-- [Руководство пользователя](docs/guides/USER_GUIDE.md)
+- [Руководство для разработчиков](docs/guides/developer_guide.md)
+- [Руководство пользователя](docs/guides/user_guide.md)
 
 ## 🔄 Дорожная карта
 
@@ -197,8 +190,7 @@ python3 build.py
 
 ## 📢 Контакты
 
-- Сайт проекта: [https://corgphish.ru](https://corgphish.ru)
-- GitHub: [https://github.com/CorgPhish/Vsosh](https://github.com/CorgPhish/Vsosh)
+- GitHub: [https://github.com/physcorgi/CorgPhish](https://github.com/physcorgi/CorgPhish)
 - Email: physcorgi@proton.me
 
 ---
@@ -210,8 +202,6 @@ python3 build.py
     </p>
     <p>
         <strong>CorgPhish</strong> - Умная защита от фишинга<br/>
-        <strong>Дата релиза:</strong> 18 апреля 2025 года | <strong>Версия:</strong> 1.0.0
+        <strong>Версия:</strong> 1.0.1
     </p>
-    <img src="https://img.shields.io/github/stars/CorgPhish/Vsosh?style=social" alt="Stars"/>
-    <img src="https://img.shields.io/github/forks/CorgPhish/Vsosh?style=social" alt="Forks"/>
 </div>
