@@ -202,6 +202,6 @@ python3 build.py
     </p>
     <p>
         <strong>CorgPhish</strong> - Умная защита от фишинга<br/>
-        <strong>Версия:</strong> 1.0.1
+        <strong>Версия:</strong> 1.0.0
     </p>
 </div>
