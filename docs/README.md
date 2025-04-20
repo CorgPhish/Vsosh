@@ -68,4 +68,4 @@ mkdocs build
 
 ---
 
-© 2023 CorgPhish Team. Все права защищены. 
+© 2023-2025 CorgPhish Team. Все права защищены. 
